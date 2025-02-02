@@ -1,0 +1,68 @@
+/* Animação de crescimento do perfil */
+@keyframes expand {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+/* Animações de entrada lateral */
+@keyframes slideInRight {
+    0% { opacity: 0; transform: translateX(100vw); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+    0% { opacity: 0; transform: translateX(-100vw); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Animações de entrada vertical */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Aplica a animação ao perfil */
+.profile-pic {
+    animation: expand 1s ease-in-out;
+}
+
+/* H1 e P entram da direita, com delay no P */
+.animated-right {
+    opacity: 0;
+    transform: translateX(100vw);
+    animation: slideInRight 1s forwards;
+}
+
+.animated-right:nth-child(3) {
+    animation-delay: 0.3s; /* Pequeno atraso no P */
+}
+
+/* Links aparecem da esquerda com delay progressivo */
+.animated-left {
+    opacity: 0;
+    transform: translateX(-100vw);
+    animation: slideInLeft 1s forwards;
+}
+
+.animated-left:nth-child(2) { animation-delay: 0.1s; }
+.animated-left:nth-child(3) { animation-delay: 0.2s; }
+.animated-left:nth-child(4) { animation-delay: 0.3s; }
+.animated-left:nth-child(5) { animation-delay: 0.4s; }
+
+/* Ícones sobem, texto desce */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+}
+
+.fade-in-down {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 0.5s forwards;
+}
